@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    /* Paths */
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    /* Project */
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": false,
+    /* Imports */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    /* Additional */
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": false,
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist", "coverage", ".next"]
+}
