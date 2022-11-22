@@ -9,11 +9,11 @@ const index = () => {
   return (
     <div className="bg-background h-screen w-screen flex flex-col justify-between">
       <div>
-        <div className="text-white  pt-[56px] flex justify-between px-[27px]">
+        <div className="text-white w-full pt-[56px] md:flex md:justify-between md:items-center  px-[27px]">
           <p className="hidden md:block text-5xl text-white text-center cursor-pointer">
             play<span className="text-purple">linkd</span>
           </p>
-          <p className="text-purple uppercase font-medium text-end w-full md:text-2xl cursor-pointer">About</p>
+          <p className="text-purple uppercase font-medium text-end md:text-2xl cursor-pointer">About</p>
         </div>
         <div className="mt-20">
           <p className="text-4xl text-white text-center md:hidden">
