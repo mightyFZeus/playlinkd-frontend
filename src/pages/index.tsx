@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import Playlinkd from "@/components/Playlinkd";
 import Link from "next/link";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 
 const index = () => {
   const [inFocus, setInFocus] = useState(false);

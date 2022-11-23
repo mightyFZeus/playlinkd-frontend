@@ -1,9 +1,10 @@
 import MusicButton from "@/components/MusicButton";
 import React from "react";
 import { BiMusic } from "react-icons/bi";
+
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 import Link from "next/link";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 
 const Music = () => {
   return (
@@ -51,8 +52,8 @@ const Music = () => {
               <HiOutlineClipboardCopy />
             </div>
           </div>
-          <MusicButton />
-          <MusicButton />
+          <MusicButton name="Apple Music" number="31 of 35 songs" />
+          <MusicButton name="Youtube Music" number="35 of 35 songs" />
           <p className="md:pt-3 pt-5 text-txt text-sm text-center md:text-start">More platforms coming soon</p>
           <div className="mt-[14px] md:flex justify-between items-center hidden">
             <Link href="/">

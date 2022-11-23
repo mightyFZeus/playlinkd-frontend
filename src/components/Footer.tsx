@@ -1,6 +1,6 @@
 import React from "react";
 
-const footer = () => {
+const Footer = () => {
   return (
     <div className="border border-yeahhh bg-yeahh mx-[80px] rounded-full py-6 cursor-pointer">
       <p className="text-white text-center">We love feedback</p>
@@ -8,4 +8,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;
