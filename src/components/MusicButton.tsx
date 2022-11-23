@@ -2,7 +2,7 @@ import React from "react";
 
 const MusicButton = () => {
   return (
-    <div className="flex justify-between items-center mt-2 px-4 py-2 rounded-lg border border-purple">
+    <div className="flex justify-between items-center mt-3 px-4 py-3 rounded-lg border border-purple">
       <div>
         <p className="text-white">Apple Music</p>
         <p className="text-xs text-[#E4D6F5]">31 of 35 songs</p>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import Playlinkd from "@/components/Playlinkd";
 import Link from "next/link";
+import Footer from "@/components/footer";
 
 const index = () => {
   const [inFocus, setInFocus] = useState(false);
@@ -9,7 +10,7 @@ const index = () => {
     setInFocus(true);
   };
   return (
-    <div className="bg-background h-screen w-screen flex flex-col justify-between origin">
+    <div className="bg-background h-screen w-screen flex flex-col justify-between origin pb-[60px]">
       <div>
         <Playlinkd />
         <div className="flex justify-center items-center mt-10">
@@ -37,10 +38,8 @@ const index = () => {
         </Link>
       </div>
 
-      <div>
-        <div className="mb-[60px] border border-[rgba(228, 214, 245, 0.41)] mx-[80px] rounded-full py-6 cursor-pointer md:hidden">
-          <p className="text-white text-center">We love feedback</p>
-        </div>
+      <div className="md:hidden">
+        <Footer />
       </div>
     </div>
   );
