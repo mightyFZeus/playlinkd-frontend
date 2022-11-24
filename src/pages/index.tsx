@@ -50,7 +50,7 @@ const index = () => {
             <div className="w-full md:w-[506px] flex gap-5 items-center bg-yeah border-t-[1px] border-yeahhh py-5 px-4 mx-[24px] rounded-b-lg">
               <img src="/assets/Group 2.png" alt="" />
               <div>
-                <p className="text-white text-base font-semibold pb-1">gbedu wey dey burst brain</p>
+                <p className="text-sm md:text-base text-white font-semibold pb-1">gbedu wey dey burst brain</p>
                 <p className="text-txt text-xs pb-1">35 songs, 2h 45 mins</p>
                 <div className="flex items-center gap-1 pb-2">
                   <div className="p-[1px] bg-white rounded">
