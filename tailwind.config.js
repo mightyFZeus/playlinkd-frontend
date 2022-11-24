@@ -8,7 +8,6 @@ module.exports = {
       colors: {
         background: "#050230",
         purple: "#B89CFF",
-        "light-purple": "#E4D6F5",
         yeah: "rgba(228, 214, 245, 0.44)",
         yeahh: "rgba(228, 214, 245, 0.12)",
         yeahhh: "rgba(228, 214, 245, 0.41)",

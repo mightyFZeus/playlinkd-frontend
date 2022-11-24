@@ -1,7 +1,6 @@
 import MusicButton from "@/components/MusicButton";
 import React from "react";
 import { BiMusic } from "react-icons/bi";
-
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 import Link from "next/link";
 import Footer from "@/components/Footer";
@@ -14,9 +13,11 @@ const Music = () => {
           <p className="text-lg md:text-5xl text-white text-center cursor-pointer">
             play<span className="text-purple">linkd</span>
           </p>
-          <p className="text-purple md:text-white hover:text-purple uppercase font-medium text-end md:text-2xl cursor-pointer">
-            About
-          </p>
+          <Link href="/about">
+            <p className="text-purple md:text-white hover:text-purple uppercase font-medium text-end md:text-2xl cursor-pointer">
+              About
+            </p>
+          </Link>
         </div>
         <div className="mt-20 hidden md:block">
           <p className="text-white text-center px-[33px] pt-4 text-sm sm:text-base md:text-[32px] md:leading-[50px]">
@@ -28,10 +29,9 @@ const Music = () => {
 
       <div className="flex justify-center items-center pt-[52px]">
         <div className="bg-music bg-no-repeat bg-cover bg-center md:w-[526px] w-full mx-5 rounded-2xl py-[53px] border border-yeahhh px-7 md:px-[83px]">
-          <div className="flex justify-between items-center">
-            <p className="font-bold text-white text-2xl md:text-3xl">
-              gbedu wey dey <br />
-              burst brain
+          <div className="flex justify-between items-center gap-2">
+            <p className="font-semibold text-white text-2xl md:text-3xl font-semibold md:pr-10">
+              gbedu wey dey burst brain
             </p>
 
             <div className="md:hidden">
@@ -42,7 +42,7 @@ const Music = () => {
           <p className="text-white py-2">35 songs, 2h 45 mins</p>
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-1 pb-2">
-              <div className="p-[1px] bg-white hidden md:block">
+              <div className="p-[1px] rounded bg-white hidden md:block">
                 <BiMusic />
               </div>
               <p className="text-white">Oreoluwa Shonibare</p>
