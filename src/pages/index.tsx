@@ -47,7 +47,7 @@ const index = () => {
 
         {music && (
           <div className="flex justify-center items-center">
-            <div className="md:w-[506px] flex gap-5 items-center bg-yeah border-t-[1px] border-yeahhh py-5 px-4 rounded-b-lg">
+            <div className="w-full md:w-[506px] flex gap-5 items-center bg-yeah border-t-[1px] border-yeahhh py-5 px-4 mx-[24px] rounded-b-lg">
               <img src="/assets/Group 2.png" alt="" />
               <div>
                 <p className="text-white text-base font-semibold pb-1">gbedu wey dey burst brain</p>
