@@ -6,7 +6,7 @@ module.exports = {
         music: "url('/assets/music.png')",
       },
       colors: {
-        background: "#050230",
+        background: "#130821",
         purple: "#B89CFF",
         yeah: "rgba(228, 214, 245, 0.44)",
         yeahh: "rgba(228, 214, 245, 0.12)",
