@@ -10,16 +10,19 @@ const About = () => {
       <div className="bg-background bg-opacity-70 z-100 relative h-screen w-screen">
         <Navbar />
         <div className="mt-20">
-          <p className="text-4xl text-white text-center md:hidden">
-            play<span className="text-purple">linkd</span>
-          </p>
+          <Link href='/'>
+            <p className="text-lg md:text-5xl text-white text-center cursor-pointer">
+              play<span className="text-purple">linkd</span>
+            </p></Link>
           <p className="text-white text-center px-[33px] lg:px-[150px] xl:px-[300px] 2xl:px-[406px] pt-4 text-sm sm:text-base md:text-[22px] md:leading-[50px]">
             playlinkd is a free platform to help you listen to your favorite playlist on whatever music streaming
             platform you choose.
           </p>
-          <p className="text-white text-center px-[33px] pt-4 text-sm sm:text-base md:text-[22px] md:leading-[50px]">
-            Made with love by Evi and Jii.
-          </p>
+          
+          <Link href='https://twitter.com/eviodioko' target='_blank'>
+            <p className="text-white text-center px-[33px] pt-4 text-sm sm:text-base md:text-[22px] md:leading-[50px]">
+              Made with love by <span className="font-bold text-3xl cursor-pointer">Evi</span>.
+            </p></Link>
         </div>
 
         <Link href="/">

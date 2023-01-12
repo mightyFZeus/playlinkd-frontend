@@ -1,21 +1,31 @@
 import MusicButton from "@/components/MusicButton";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { BiMusic } from "react-icons/bi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 import Link from "next/link";
-import Footer from "@/components/Footer";
 import Wrapper from "@/HOC/Wrapper";
+import { IData } from "@/utils/payload";
 
 const Music = () => {
+
+  const [data, setData] = useState<IData>()
+
+
+  useEffect(() => {
+    const parseData = JSON.parse(`${localStorage.getItem('playlistData')}`);
+    setData(parseData)
+
+  }, [])
   return (
     <Wrapper>
       <>
-        <div className="bg-background bg-opacity-70 relative z-100 h-full w-full flex flex-col justify-between pb-[60px] md:pb-24">
+        <div className="bg-background bg-opacity-70 relative z-100 h-full w-full flex flex-col justify-between  pb-10 md:pb-24">
           <div>
             <div className="text-white w-full pt-[56px] flex justify-between items-center  px-[27px]">
-              <p className="text-lg md:text-5xl text-white text-center cursor-pointer">
-                play<span className="text-purple">linkd</span>
-              </p>
+              <Link href='/'>
+                <p className="text-lg md:text-5xl text-white text-center cursor-pointer">
+                  play<span className="text-purple">linkd</span>
+                </p></Link>
               <Link href="/about">
                 <p className="text-purple md:text-white hover:text-purple uppercase font-medium text-end md:text-2xl cursor-pointer">
                   About
@@ -31,10 +41,10 @@ const Music = () => {
           </div>
 
           <div className="flex justify-center items-center pt-[52px]">
-            <div className="bg-music bg-no-repeat bg-cover bg-center md:w-[526px] w-full mx-5 rounded-2xl py-[53px] border border-yeahhh px-7 md:px-[83px]">
+            {data && <div className="bg-music bg-no-repeat bg-cover bg-center md:w-[526px] w-full mx-5 rounded-2xl py-[53px] border border-yeahhh px-7 md:px-[83px]">
               <div className="flex justify-between items-center gap-2">
-                <p className="font-semibold text-white text-2xl md:text-3xl font-semibold md:pr-10">
-                  gbedu wey dey burst brain
+                <p className="font-semibold text-white text-2xl md:text-3xl  md:pr-10">
+                  {data?.title}
                 </p>
 
                 <div className="md:hidden">
@@ -42,7 +52,8 @@ const Music = () => {
                 </div>
               </div>
 
-              <p className="text-white py-2">35 songs, 2h 45 mins</p>
+              <p className="text-white py-2">{data?.numberOfSongs} songs, {(data?.duration / 3600).toFixed(0)}h{" "}
+                {(data?.duration / 60).toFixed(0)}mins</p>
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-1 pb-2">
                   <div className="p-[1px] rounded bg-white hidden md:block">
@@ -50,40 +61,41 @@ const Music = () => {
                   </div>
                   <p className="text-white">Oreoluwa Shonibare</p>
                 </div>
-                <div className="md:flex items-center gap-2 text-txt border border-purple rounded-full px-3 py-2 hidden">
-                  <p>Copy link</p>
-                  <HiOutlineClipboardCopy />
+
+              </div>
+              <MusicButton name="Apple Music" number="31 of 35 songs" url='apple' />
+              <MusicButton name="Youtube Music" number="35 of 35 songs" url='googleLogin' />
+              <MusicButton name="Spotify Music" number="35 of 35 songs" url='spotifyLogin' />
+              <p className="md:pt-4 pt-5 text-txt text-sm text-center md:text-start">More platforms coming soon</p>
+              <div className="flex justify-center items-center mt-8">
+                <div className="w-full md:flex justify-center item-center gap-2 hidden  text-white py-2  rounded-full cursor-pointer border border-purple transition ease-in-out ">
+                  <p className="text-center font-semisemibold">Copy Link</p>
+                  <img src="/assets/copy.png" className="h-4 my-auto" />
                 </div>
               </div>
-              <MusicButton name="Apple Music" number="31 of 35 songs" />
-              <MusicButton name="Youtube Music" number="35 of 35 songs" />
-              <p className="md:pt-3 pt-5 text-txt text-sm text-center md:text-start">More platforms coming soon</p>
-              <div className="mt-[14px] md:flex justify-between items-center hidden">
-                <Link href="/">
-                  <p className="text-white cursor-pointer hover:text-txt">Make another playlist</p>
-                </Link>
-                <div className="border bg-yeahh border-yeahhh rounded-full py-3 px-5 cursor-pointer">
-                  <p className="text-white text-center text-sm">We love feedback</p>
-                </div>
-              </div>
-              <div className="flex justify-center items-center pt-4 md:hidden">
+
+              <div className="flex justify-center items-center md:pt-4 pt-1 md:hidden">
                 <div className="flex items-center gap-2 text-txt border border-purple rounded-full px-3 py-2 cursor-pointer">
-                  <p className="text-sm">Share</p>
-                  <HiOutlineClipboardCopy className="text-lg" />
+                  <p className="text-sm">Copy Link</p>
+                  <img src="/assets/copy.png" className="h-4 my-auto" />
+
                 </div>
               </div>
+            </div>}
+          </div>
+
+          <div className="mt-[20px] md:flex justify-between items-center   md:w-[400px] mx-auto">
+            <Link href="/">
+              <p className="text-white cursor-pointer my-8 md:my-0 hover:text-txt font-bold">Make another playlist</p>
+            </Link>
+            <div className="border bg-yeahh border-yeahhh rounded-full py-[0.7rem] px-5 cursor-pointer">
+              <p className="text-white text-center text-sm">We love feedback</p>
             </div>
           </div>
 
-          <div className="mt-10">
-            <Link href="/">
-              <p className="text-white cursor-pointer hover:text-txt text-center">Make another playlist</p>
-            </Link>
-          </div>
-
-          <div className="mt-10 md:hidden">
+          {/* <div className="mt-10 md:hidden">
             <Footer />
-          </div>
+          </div> */}
         </div>
       </>
     </Wrapper>
