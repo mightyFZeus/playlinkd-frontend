@@ -21,3 +21,12 @@ export interface ResponsePayload<T> {
   message: string;
   data: T;
 }
+
+export interface PlatFormData {
+  url: string;
+  link: string | string[] | undefined;
+}
+
+export interface PlaylistData {
+  playlistUrl:string
+}

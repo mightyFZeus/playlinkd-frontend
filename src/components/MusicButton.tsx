@@ -1,14 +1,30 @@
-import { useLazyGetPlatformQuery } from "@/services/apis/platform";
-import React from "react";
+import { useGetPlatformMutation } from "@/services/apis/platform";
+import React, { useEffect } from "react";
 import { BsCheck2 } from "react-icons/bs";
 
-const MusicButton = ({ name, number, url }: { name: string; number: string, url: string }) => {
-  
-  const [trigger, result] = useLazyGetPlatformQuery()
+interface IMusicButton {
+  name: string;
+  url: string;
+  number: string;
+  link: string | string[] | undefined;
+  setPlaylistUrl: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const MusicButton: React.FC<IMusicButton> = ({ name, number, url, link, setPlaylistUrl }) => {
+  const [trigger, { isLoading, data }] = useGetPlatformMutation();
 
   const handleClick = () => {
-    trigger(url)
-  }
+    trigger({
+      url,
+      link,
+    });
+  };
+
+  useEffect(() => {
+    if (data) {
+      setPlaylistUrl(data.data.playlistUrl);
+    }
+  }, [data]);
 
   return (
     <div className="flex justify-between items-center mt-3 px-4 py-3 rounded-lg border border-purple">
@@ -19,10 +35,13 @@ const MusicButton = ({ name, number, url }: { name: string; number: string, url:
           <BsCheck2 />
         </div>
       </div>
-      <a href={`https://test-vxm7.onrender.com/${url}`}>
-        <button className="bg-white text-[#1D0361] px-3 py-[6px] text-sm font-semibold rounded-full" >Open</button>
-
-      </a>
+      <button onClick={handleClick} className="bg-white w-[80px]  rounded-full">
+        {isLoading ? (
+          <p className="px-3 py-[4px] text-[#1D0361] text-xl font-semibold ">. . .</p>
+        ) : (
+          <p className="px-3 py-[6px]  text-[#1D0361] text-sm font-semibold ">Open</p>
+        )}
+      </button>
     </div>
   );
 };

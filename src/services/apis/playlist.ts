@@ -10,11 +10,12 @@ import { ResponsePayload, IData } from '../../utils/payload';
          url: "/playlist",
          method: "POST",
          body: {
-           playlistUrl: credentials,
+           url: credentials,
          },
        }),
      }),
    }),
+   overrideExisting: true,
  });
 
 export const { useGetPlaylistMutation } = playListApi
